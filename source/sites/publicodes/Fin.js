@@ -10,7 +10,7 @@ import { motion } from 'framer-motion'
 import BallonGES from './images/ballonGES.svg'
 import StartingBlock from './images/starting block.svg'
 import SessionBar from 'Components/SessionBar'
-import Chart from './chart'
+import ClimateTargetChart from './chart/ClimateTargetChart'
 import { Link } from 'react-router-dom'
 
 const gradient = tinygradient([
@@ -85,63 +85,13 @@ const AnimatedDiv = animated(({ score, value, details }) => {
 					font-size: 110%;
 				`}
 			>
-				<div css="display: flex; align-items: center; justify-content: center">
-					<img src={BallonGES} css="height: 10rem" />
-					<div>
-						<div css="font-weight: bold; font-size: 280%; margin-bottom: .3rem">
-							<span css="width: 3.6rem; text-align: right; display: inline-block">
-								{Math.round(value / 1000)}
-							</span>{' '}
-							tonnes
-						</div>
-						<div
-							css={`
-								background: #ffffff3d;
-								border-radius: 0.6rem;
-								margin: 0 auto;
-								padding: 0.4rem 1rem;
-
-								> div {
-									display: flex;
-									justify-content: space-between;
-									flex-wrap: wrap;
-								}
-								strong {
-									font-weight: bold;
-								}
-								> img {
-									margin: 0 0.6rem !important;
-								}
-							`}
-						>
-							<div>
-								<span>
-									{emoji('🇫🇷 ')}
-									moyenne{' '}
-								</span>{' '}
-								<strong> 11 tonnes</strong>
-							</div>
-							<div>
-								<span>
-									{emoji('🎯 ')}
-									objectif{' '}
-								</span>
-								<strong>2 tonnes</strong>
-							</div>
-							<div css="margin-top: .2rem;justify-content: flex-end !important">
-								<a
-									css="color: inherit"
-									href="https://ecolab.ademe.fr/blog/général/budget-empreinte-carbone-c-est-quoi.md"
-								>
-									Comment ça ?
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div css="padding: 1rem">
-					<Chart details={details} color={textColor} noAnimation noText />
-				</div>
+				<ClimateTargetChart
+					value={value}
+					details={details}
+					color={textColor}
+					noAnimation
+					noText
+				/>
 
 				<div css="display: flex; flex-direction: column;">
 					<ShareButton

@@ -10,16 +10,7 @@ import Bar from './Bar'
 import { sortBy } from 'ramda'
 import { Link } from 'react-router-dom'
 
-const showBudget = false
-const // Rough estimate of the 2050 budget per person to stay under 2° by 2100
-	climateBudgetPerYear = 2000,
-	climateBudgetPerDay = climateBudgetPerYear / 365,
-	// Based on current share of the annual mean of 12 ton per french
-	// Source : http://ravijen.fr/?p=440
-	transportShare = 1 / 4,
-	transportClimateBudget = climateBudgetPerDay * transportShare
-
-const sortCategories = sortBy(({ nodeValue }) => -nodeValue)
+export const sortCategories = sortBy(({ nodeValue }) => -nodeValue)
 export const extractCategories = (analysis) => {
 	const getRule = getRuleFromAnalysis(analysis)
 
@@ -31,11 +22,9 @@ export const extractCategories = (analysis) => {
 
 	return sortCategories(categories)
 }
-export default ({ details, color, noText, noAnimation }) => {
-	const analysis = useSelector(analysisWithDefaultsSelector),
-		rules = useSelector(parsedRulesSelector)
 
-	const categories = analysis?.targets.length
+export const getCategories = (analysis, details, rules) =>
+	analysis?.targets.length
 		? extractCategories(analysis)
 		: details &&
 		  sortCategories(
@@ -47,20 +36,25 @@ export default ({ details, color, noText, noAnimation }) => {
 					}
 				})
 		  )
-	if (!categories) return null
 
-	const empreinteMaximum = categories.reduce(
+export const computeEmpreinteMaximum = (categories) =>
+	categories.reduce(
 		(memo, next) => (memo.nodeValue > next.nodeValue ? memo : next),
 		-1
 	).nodeValue
 
+export default ({ details, color, noText, noAnimation }) => {
+	const analysis = useSelector(analysisWithDefaultsSelector),
+		rules = useSelector(parsedRulesSelector)
+
+	const categories = getCategories(analysis, details, rules)
+
+	if (!categories) return null
+
+	const empreinteMaximum = computeEmpreinteMaximum(categories)
 	return (
 		<section
 			css={`
-				h2 {
-					margin: 0.6rem 0 0.1rem;
-					font-size: 140%;
-				}
 				padding: 0;
 			`}
 		>
@@ -69,22 +63,6 @@ export default ({ details, color, noText, noAnimation }) => {
 					position: relative;
 				`}
 			>
-				<span
-					css={`
-				${!showBudget ? 'display: none' : ''}
-				height: 100%;
-				left: 0;
-				z-index: -1;
-				left: ${((transportClimateBudget * 1000) / empreinteMaximum) * 100 * 0.9}%;
-
-				width: 0px;
-				border-right: 8px dotted yellow;
-		        position: absolute;
-				margin-top: 2rem;
-				}
-					`}
-					key="budget"
-				></span>
 				<ul
 					css={`
 						margin-left: 2rem;
@@ -125,11 +103,6 @@ export default ({ details, color, noText, noAnimation }) => {
 					))}
 				</ul>
 			</div>
-			{showBudget && (
-				<span css=" background: yellow ;">
-					Budget climat 1 journée {transportClimateBudget.toFixed(1)} kg
-				</span>
-			)}
 		</section>
 	)
 }
