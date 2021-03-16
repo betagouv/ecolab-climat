@@ -130,6 +130,10 @@ module.exports.commonLoaders = () => {
 				},
 			],
 		},
+		{
+			test: /\.md$/,
+			use: ['raw-loader'],
+		},
 	]
 }
 

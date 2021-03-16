@@ -93,6 +93,10 @@ export default () => {
 						{emoji('🙈 ')}
 						Vie privée
 					</Link>
+					<Link to="/budget">
+						{emoji('💶 ')}
+						Budget
+					</Link>
 				</div>
 			</footer>
 		</div>

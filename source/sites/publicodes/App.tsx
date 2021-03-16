@@ -21,6 +21,7 @@ import BandeauContribuer from './VersionBeta'
 import { useTranslation } from 'react-i18next'
 import sitePaths from './sitePaths'
 import News from 'Pages/News'
+import Budget from 'Pages/Budget'
 
 let tracker = devTracker
 if (process.env.NODE_ENV === 'production') {
@@ -92,6 +93,7 @@ const Router = ({}) => (
 				<Route path="/à-propos" component={About} />
 				<Route path="/vie-privée" component={Privacy} />
 				<Route path="/nouveautés" component={News} />
+				<Route path="/budget" component={Budget} />
 
 				<Route component={Route404} />
 			</Switch>
