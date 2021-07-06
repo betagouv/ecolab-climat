@@ -225,7 +225,7 @@
       unité: années
     transport . voiture . motorisation: "'thermique'"
     transport . voiture . voyageurs:
-      valeur: 1,15 # 12 000 km seul et 5000 km avec un taux moyen de 1,5
+      valeur: 1.15 # 12 000 km seul et 5000 km avec un taux moyen de 1,5
       unité: voyageurs
     transport . voiture . thermique . consommation aux 100:
       valeur: 7
