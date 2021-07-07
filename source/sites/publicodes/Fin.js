@@ -1,19 +1,18 @@
-import React from 'react'
-import { useLocation, useParams } from 'react-router'
-import emoji from 'react-easy-emoji'
-import tinygradient from 'tinygradient'
-import { animated, useSpring } from 'react-spring'
+import SessionBar from 'Components/SessionBar'
 import ShareButton from 'Components/ShareButton'
 import { findContrastedTextColor } from 'Components/utils/colors'
 import { motion } from 'framer-motion'
-
+import emoji from 'react-easy-emoji'
+import { useLocation } from 'react-router'
+import { Link } from 'react-router-dom'
+import { animated, useSpring } from 'react-spring'
+import tinygradient from 'tinygradient'
+import Meta from '../../components/utils/Meta'
+import Chart from './chart'
+import DefaultFootprint from './DefaultFootprint'
+import IframeDataShareModal from './IframeDataShareModal'
 import BallonGES from './images/ballonGES.svg'
 import StartingBlock from './images/starting block.svg'
-import SessionBar from 'Components/SessionBar'
-import Chart from './chart'
-import { Link } from 'react-router-dom'
-import Meta from '../../components/utils/Meta'
-import DefaultFootprint from './DefaultFootprint'
 
 const gradient = tinygradient([
 		'#78e08f',
@@ -62,12 +61,15 @@ export default ({}) => {
 		  })
 
 	return (
-		<AnimatedDiv
-			value={value}
-			score={score}
-			details={Object.fromEntries(rehydratedDetails)}
-			headlessMode={headlessMode}
-		/>
+		<div>
+			<AnimatedDiv
+				value={value}
+				score={score}
+				details={Object.fromEntries(rehydratedDetails)}
+				headlessMode={headlessMode}
+			/>
+			<IframeDataShareModal data={rehydratedDetails} />
+		</div>
 	)
 }
 
@@ -192,7 +194,6 @@ const AnimatedDiv = animated(({ score, value, details, headlessMode }) => {
 						/>
 					</div>
 				</div>
-
 				<div css="display: flex; flex-direction: column; margin: 1rem 0">
 					<ShareButton
 						text="Voilà mon empreinte climat. Mesure la tienne !"
