@@ -30,6 +30,17 @@ L’équipe de NGC travaille à développer une approche « foyer » du calculat
 
 Les émissions des énergies fossiles financées par les banques sont comptabilisées pour ceux qui les utilisent. De façon illustrée, votre banque finance peut-être l'extraction du pétrole au large de la Sibérie, mais ce pétrole est extrait pour un usage précis : faire 10km de voiture, chauffer une maison ou produire du plastique. Ce sont les consommations voiture, logement et plastique qui dans le modèle se voient attribuer ces émissions. Il nous serait très difficile au vu des données actuelles d'inclure une part de responsabilité de l'empreinte des fortunes personnelles dans le modèle, sans faire un double comptage.
 
+<h3 id="2tonnes">Deux tonnes, c'est trop dur, j'y arrive pas !</h3>
+
+Cette réaction est normale ! 
+
+L'empreinte carbone moyenne d'un français est environ cinq fois plus élevée que l'objectif climatique que nous devons atteindre. L'effort est donc rude, mais les limites planétaires (la propension de la planète à se réchauffer quand on émet des gaz à effet de serre) ne sont pas politiques, ne sont pas négociables. L'État français prévoit d'atteindre la neutralité carbone en 2050. Il s'agit pour nous tous de progresser, individuellement, vers cet objectif. 
+
+Plus nous serons à viser cet objectif de deux tonnes dans les prochaines années et décénnies, plus il deviendra facile d'accès pour chacun d'entre-nous : une collectivité où les citoyens se mettent massivement au vélo (ou à un autre mode bas carbone) poussera ses élus à favoriser de nouvelles infrastructures et politiques adéquates, ce qui en retour aidera les prochains à se mettre au vélo, et ainsi de suite ♻️.
+
+Notons aussi que l'exercice de bilan carbone peut provoquer un découragement, car on n'y compte que les activités qui émettent des gaz à effet de serre, et on parle peu de ce qui en émet moins (car cela n'a pas de poids dans la comptabilité). D'autres ateliers vont plus loin, comme [Inventons nos vies bas carbone](https://www.resistanceclimatique.org/inventons_nos_vies_bas_carbone) de l'association Resistance Climatique : visualisons également tout ce que l'on peut faire avec peu de pollution ; marcher dans la nature, jouer de la musique, faire du vélo, naviguer à la voile, passer du temps avec ses proches, faire la fête, lire, discuter, faire son potager... Une vie bas carbone, c'est aussi plus d'expériences joyeuses, qu'on ne retrouve pas forcément dans un bilan carbone, mais qui seront au coeur des styles de vie que nous inventons en ce moment même.
+
+
 ## SERVICES PUBLICS
 
 ### A la fin de mon calcul il y a un poste « service public », qu’est-ce que c’est ?</h3>
